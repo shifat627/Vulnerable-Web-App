@@ -1,0 +1,11 @@
+#version: '4.0'
+services:
+  Lab:
+    build: ./lab
+    container_name: vulns_lab_c
+    image: vulns_lab
+    ports:
+      - '2222:22'
+      - '80:80'
+    
+    

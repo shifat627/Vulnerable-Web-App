@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Beautiful Page with Navigation</title>
+    <style>
+        body, html {
+            margin: 0;
+            padding: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: #f0f2f5;
+            height: 100vh;
+        }
+
+        .navbar {
+            background-color: #ffffff;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            display: flex;
+            justify-content: flex-end;
+            padding: 10px 20px;
+        }
+
+        .nav-link {
+            margin-left: 20px;
+            font-size: 16px;
+            color: #333;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .nav-link:hover {
+            color: #0056b3;
+        }
+
+        .content {
+            padding: 20px;
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        h1 {
+            color: #333;
+        }
+    </style>
+</head>
+<body>
+    <div class="navbar">
+        <a href="{{ url_for ('Settings')}}" class="nav-link">Settings</a>
+        <a href="{{ url_for ('Upload')}}" class="nav-link">Upload</a>
+        <a href="{{ url_for ('Post')}}" class="nav-link">Post Notice</a>
+        <a href="{{ url_for ('Download')}}" class="nav-link">Files</a>
+        <a href="{{ url_for ('Notice')}}" class="nav-link">View Notice</a>
+        <a href="{{ url_for ('Proxy')}}" class="nav-link">Proxy</a>
+        <a href="{{ url_for ('UserList')}}" class="nav-link">Users</a>
+        <a href="{{ url_for ('Logout')}}" class="nav-link">Logout</a>
+        <i class="nav-link">Hello {{ username }}</i>
+    </div>
+    <div class="content">
+        <h1>Welcome to Home</h1>
+        
+    </div>
+</body>
+</html>

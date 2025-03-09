@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Notice Board</title>
+<style>
+  body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f9;
+    margin: 0;
+    padding: 20px;
+  }
+  .board {
+    background-color: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    padding: 20px;
+    margin: auto;
+    width: 80%;
+    max-width: 800px;
+  }
+  .notice {
+    background-color: #fff3cd;
+    border-left: 5px solid #ffc107;
+    padding: 10px 20px;
+    margin-bottom: 20px;
+    border-radius: 5px;
+  }
+  h1 {
+    color: #333;
+    text-align: center;
+  }
+  .notice h2 {
+    color: #666;
+  }
+  .notice p {
+    color: #555;
+  }
+  .notice:last-child {
+    margin-bottom: 0;
+  }
+</style>
+</head>
+<body>
+
+<div class="board">
+  <h1>Notice Board</h1>
+  <h1><a href="{{ url_for('Home')}}">Home</a></h1>
+  {% for notice in news %}
+  <div class="notice">
+    <a href="{{ url_for( 'Notice' , author=notice['username'] ) }}"> Author : {{notice['username']  }}</a>
+    <p><textarea rows="20" cols="40">{{ notice['post'] | safe }}</textarea></p>
+  </div>
+  {% endfor %}
+</div>
+
+</body>
+</html>

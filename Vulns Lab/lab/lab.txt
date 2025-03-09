@@ -1,0 +1,7 @@
+create table users (id INTEGER PRIMARY KEY AUTOINCREMENT , username TEXT , name TEXT , email TEXT , password TEXT , is_admin INTEGER, is_active INTEGER);
+create table loggedInUser ( user_id INTEGER NOT NULL, id INTEGER PRIMARY KEY AUTOINCREMENT , UID TEXT NOT NULL , FOREIGN KEY (user_id ) REFERENCES users (id));
+create table Posts (user_id INTEGER NOT NULL, id INTEGER PRIMARY KEY AUTOINCREMENT , post TEXT NOT NULL , FOREIGN KEY (user_id ) REFERENCES users (id));
+create table FileList (user_id INTEGER NOT NULL, id INTEGER PRIMARY KEY AUTOINCREMENT, filePath TEXT NOT NULL ,FOREIGN KEY (user_id ) REFERENCES users (id));
+
+
+insert into users (username,password,email,is_admin,is_active,name) values ('admin','qwerty123','admin@bugsbd.com',1,0,'Hasan'), ('developer','123456','developer@bugsbd.com',0,1,'Rohid');

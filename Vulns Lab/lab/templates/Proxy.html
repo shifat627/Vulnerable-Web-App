@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Submit a Link</title>
+<style>
+  body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f0f0f5;
+    margin: 0;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+  }
+  .container {
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    width: 100%;
+    max-width: 400px;
+  }
+  h1 {
+    text-align: center;
+    color: #333;
+  }
+  form {
+    display: flex;
+    flex-direction: column;
+  }
+  input[type="text"], input[type="submit"] {
+    padding: 10px;
+    margin: 10px 0;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+  }
+  input[type="text"] {
+    flex-grow: 1;
+  }
+  input[type="submit"] {
+    background-color: #5c67f2;
+    color: white;
+    cursor: pointer;
+  }
+  input[type="submit"]:hover {
+    background-color: #4a54e1;
+  }
+</style>
+</head>
+<body>
+
+<div class="container">
+  <h1>Submit Your Link</h1>
+  <h1><a href="{{ url_for('Home')}}">Home</a></h1>
+  <form action="{{ url_for ('Proxy')}}" method="post">
+    <input type="text" name="url" placeholder="Enter your URL here" required>
+    <input type="submit" value="Get">
+  </form>
+</div>
+
+</body>
+</html>
